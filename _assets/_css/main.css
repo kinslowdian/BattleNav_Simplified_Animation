@@ -73,6 +73,13 @@
 		background-size: 87px 120px;
 	}
 	
+	.vectors_superPunchShock
+	{
+		background-image: url(../_img/puchSmashShock.svg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+	
 	#battleNav-player1
 	{
 		left: 0;
@@ -98,6 +105,19 @@
 		z-index: 0;
 	}
 	
+	.battleNav-player-head-main
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		
+		z-index: 3;
+	}
+	
 	.battleNav-player-head
 	{
 		width: inherit;
@@ -108,7 +128,7 @@
 		left: 0;
 		top: 0;
 		
-		z-index: 2;
+		z-index: 0;
 	}
 	
 	.tween-battleNav-player-head
@@ -129,6 +149,26 @@
 		0%		{transform: translateY(0);}
 		50%		{transform: translateY(-2px);}
 		100%	{transform: translateY(0);}
+	}
+	
+	.tween-battleNav-player-headWeak
+	{
+		-webkit-animation	: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHeadWeakFrames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHeadWeakFrames
+	{
+		0%		{-webkit-transform: translateX(0);}
+		50%		{-webkit-transform: translateX(-2px);}
+		100%	{-webkit-transform: translateX(0);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHeadWeakFrames
+	{
+		0%		{transform: translateX(0);}
+		50%		{transform: translateX(-2px);}
+		100%	{transform: translateX(0);}
 	}
 	
 	.battleNav-player-head-rabbit
@@ -208,7 +248,7 @@
 		left: 0;
 		top: 0;
 		
-		z-index: 1;
+		z-index: 2;
 	}
 	
 	.battleNav-player-hands
@@ -230,6 +270,12 @@
 		animation			: tweenBattleNavPlayerHandsFrames 0.4s ease-in-out infinite;
 	}
 	
+	.tween-battleNav-player-handsSuper
+	{
+		-webkit-animation	: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsFrames 0.1s ease-in-out infinite;
+	}
+	
 	@-webkit-keyframes tweenBattleNavPlayerHandsFrames
 	{
 		0%		{-webkit-transform: translateX(4px);}
@@ -243,6 +289,26 @@
 		50%		{transform: translateX(0px);}
 		100%	{transform: translateX(4px);}
 	}
+		
+	.tween-battleNav-player-handsWeak
+	{
+		-webkit-animation	: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
+		animation			: tweenBattleNavPlayerHandsWeakFrames 0.1s ease-in-out infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerHandsWeakFrames
+	{
+		0%		{-webkit-transform: translateY(4px);}
+		50%		{-webkit-transform: translateY(0px);}
+		100%	{-webkit-transform: translateY(4px);}
+	}
+	
+	@keyframes tweenBattleNavPlayerHandsWeakFrames
+	{
+		0%		{transform: translateY(4px);}
+		50%		{transform: translateY(0px);}
+		100%	{transform: translateY(4px);}
+	}	
 	
 	.battleNav-player-handsSprite
 	{
@@ -269,7 +335,7 @@
 		
 		position: absolute;
 		
-		z-index: 0;
+		z-index: 1;
 	}
 	
 	.battleNav-player-legsSprite
@@ -469,5 +535,120 @@
 		to		{transform: translateY(3px);}
 	}
 	
+	.battleNav-smash-head
+	{
+		-webkit-transform: rotate(-10deg) translateY(-10px);
+		transform: rotate(-10deg) translateY(-10px);
+	}
+	
+	.battleNav-smash-head-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+	
+		-webkit-transform: rotate(-30deg) translateY(-30px);
+		transform: rotate(-30deg) translateY(-30px);		
+	}
+	
+	.battleNav-smash-body
+	{
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	
+	.battleNav-smash-body-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+	
+		-webkit-transform: rotate(-14deg) translateX(-24px) translateY(-10px);
+		transform: rotate(-14deg) translateX(-24px) translateY(-10px);		
+	}
+	
+	.battleNav-smash-legs-KILLER
+	{
+		-webkit-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		
+		-webkit-transform: rotate(-4deg) translateX(-4px) translateY(-6px);
+		transform: rotate(-4deg) translateX(-4px) translateY(-6px);			
+	}
+	
+	.tween-battleNav-smash
+	{
+		-webkit-transition: -webkit-transform 0.1s linear;
+		transition: transform 0.1s linear;
+	}
+	
+	.battleNav-player-shock
+	{
+		width: 100px;
+		height: 100px;
+		
+		position: absolute;
+		
+		left: -10px;
+		top: -20px;
+		
+		z-index: 0;
+	}
+	
+	.tween-battleNav-player-shock
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		-webkit-animation: tweenBattleNavPlayerShockFrames 1s linear forwards;
+		animation: tweenBattleNavPlayerShockFrames 1s linear forwards;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerShockFrames
+	{
+		from	{-webkit-transform: rotate(0deg);}
+		to		{-webkit-transform: rotate(360deg);}
+	}
+	
+	@keyframes tweenBattleNavPlayerShockFrames
+	{
+		from	{transform: rotate(0deg);}
+		to		{transform: rotate(360deg);}
+	}
+	
+	.battleNav-player-shockSprite
+	{
+		width: inherit;
+		height: inherit;
+		
+		visibility: hidden;
+		
+		position: relative;
+	}
+	
+	.tween-battleNav-player-shockSprite
+	{
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		
+		-webkit-animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
+		animation: tweenBattleNavPlayerShockSpriteFrames 0.3s steps(3) 0 infinite;
+	}
+	
+	@-webkit-keyframes tweenBattleNavPlayerShockSpriteFrames
+	{
+		from	{-webkit-transform: scale(1);}
+		to		{-webkit-transform: scale(0.4);}
+	}
+	
+	@keyframes tweenBattleNavPlayerShockSpriteFrames
+	{
+		from	{transform: scale(1);}
+		to		{transform: scale(0.4);}
+	}
+	
+	.KILLER-PUNCH
+	{
+		-webkit-transition-delay: 0s;
+		transition-delay: 0s;
+	}
 
 	

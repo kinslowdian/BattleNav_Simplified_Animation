@@ -1,93 +1,93 @@
 	
 	var trace = function(str){ console.log(str); };
 	
-	var test;
+	$(document).ready(function(){ init(); });
 	
-	var player1;
-	var player2;
+	var html_superPunch = "";
 	
-	var TestTimer = function()
+	var testTimer;
+	
+	function init()
 	{
-		this.t = null;	
-	};
+		trace("init();");	
 	
-	TestTimer.prototype.time = function(funct, secs)
-	{
-		this.t = setTimeout(funct, secs * 1000);
-	}
-	
-	function runThis()
-	{
-		document.addEventListener("DOMContentLoaded", pageLoaded, false);
-	}
-	
-	function pageLoaded(event)
-	{
-		document.removeEventListener("DOMContentLoaded", pageLoaded, false);
+		test_punchAttackInit();
 		
-		player1 = document.getElementById("battleNav-player1");
-		player2 = document.getElementById("battleNav-player2");
-		
-		test = setTimeout(runTests, 3 * 1000, "EYES_1");
-		
-		quick();
+		testTimer = setTimeout(test_punchAttackApply, 2 * 1000, 2);
 	}
 	
-	function quick()
+	function test_punchAttackInit()
 	{
-		var a = new TestTimer();
+		html_superPunch = $(".battleNav-superPunch").html();
 		
-		a.time(quickCall, 5);
+		$(".battleNav-superPunch").html("");
 	}
 	
-	function quickCall()
+	function test_punchAttackApply(playerNum)
 	{
-		alert("IT WORKS");
-	}
-	
-	function runTests(request)
-	{
-		switch(request)
+		var _id = "battleNav-player" + playerNum;
+		
+		$("#" + _id).addClass("battleNav-superPunchAttacker");
+		
+		for(var i = 0; i < 10; i++)
 		{
-			case "EYES_0":
-			{
-				changeEyes();
-				
-				break;
-			}
-			
-			case "EYES_1":
-			{
-				lookEyes();
-				break;
-			}
+			var de = i * 0.2;
+			var st = setTimeout(test_punchAttackAdd, de * 1000, _id, i);
 		}
 	}
 	
-	function changeEyes()
+	function test_punchAttackAdd(div, num)
 	{
-		var eyes1;
-		var eyes2;
+		var exitFrame;
 		
-		eyes1 	= player1.getElementsByClassName("battleNav-player-eyesSprite");
-		eyes2 	= player2.getElementsByClassName("battleNav-player-eyesSprite");
+		$("#" + div + " .battleNav-superPunch").append(html_superPunch);
 		
-		eyes1[0].classList.remove("battleNav-player-eyesSprite-normal");
-		eyes1[0].classList.add("battleNav-player-eyesSprite-sad");
+		// $('[data-asset == "superPunch"]').attr("id", "superPunch" + num);
 		
-		eyes2[0].classList.remove("battleNav-player-eyesSprite-normal");
-		eyes2[0].classList.add("battleNav-player-eyesSprite-happy");
+		// $("#" + div + " #superPunch" + num).removeAttr("data-asset");
+		
+		//$("#" + div + " #superPunch" + num).addClass("battleNav-superPunchAttack");
+		
+		//$("#" + div + " #_PUNCH").attr("id", "superPunch" + num);
+		
+		// $("#" + div + " ._PUNCH").attr("id", "superPunch" + num);
+		
+		// $("#" + div + " #superPunch" + num).removeClass("_PUNCH");
+		
+		$("#" + div + " ._PUNCH").addClass("SUPER-PUNCH" + num);
+		$("#" + div + " ." + "SUPER-PUNCH" + num).removeClass("_PUNCH");
+		
+		//$("#" + div + " #superPunch" + num).addClass("battleNav-superPunchAttack");
+	
+		exitFrame = setTimeout(test_punchAttackFire, 20, $("#" + div + " ." + "SUPER-PUNCH" + num));
 	}
 	
-	function lookEyes()
+	function test_punchAttackFire(div)
 	{
-		var eyes1;
-		var eyes2;
+		$(div)[0].addEventListener("webkitTransitionEnd", testPunchAttackFireEnd, false);
+		$(div)[0].addEventListener("transitionend", testPunchAttackFireEnd, false);
 		
-		eyes1 	= player1.getElementsByClassName("battleNav-player-eyes");
-		eyes2 	= player2.getElementsByClassName("battleNav-player-eyes");
-		
-		eyes1[0].classList.add("battleNav-player-eyes-lookF");
-		
-		eyes2[0].classList.add("battleNav-player-eyes-lookF");		
+		$(div).addClass("battleNav-superPunchAttack");
 	}
+	
+	function testPunchAttackFireEnd(event)
+	{
+		trace(event);
+		
+		$(event.target)[0].removeEventListener("webkitTransitionEnd", testPunchAttackFireEnd, false);
+		$(event.target)[0].removeEventListener("transitionend", testPunchAttackFireEnd, false);
+		
+		$(event.target)[0].addEventListener("webkitTransitionEnd", testPunchAttackComplete, false);
+		$(event.target)[0].addEventListener("transitionend", testPunchAttackComplete, false);
+	
+		$(event.target).removeClass("battleNav-superPunchAttack").addClass("battleNav-superPunchReturn");
+	}
+	
+	function testPunchAttackComplete(event)
+	{
+		$(event.target)[0].removeEventListener("webkitTransitionEnd", testPunchAttackComplete, false);
+		$(event.target)[0].removeEventListener("transitionend", testPunchAttackComplete, false);
+		
+		$(event.target).css("opacity", "0");
+	}
+	

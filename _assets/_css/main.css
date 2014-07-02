@@ -50,6 +50,12 @@
 		z-index: 0;
 	}
 	
+	.tweenFlickerFix div
+	{
+		-webkit-backface-visibility	: hidden;
+		backface-visibility			: hidden;		
+	}
+	
 	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! USE */
 	
 	.pixels_battleNav-player

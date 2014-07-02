@@ -54,9 +54,9 @@
 	
 	.pixels_battleNav-player
 	{
-		background-image: url(../_img/enemyBattleCute60x60.png);
+		background-image: url(../_img/battleCute_1x.png);
 		background-repeat: no-repeat;
-		background-size: 180px 180px;
+		background-size: 240px 180px;
 	}
 	
 	.pixels_battleNav
@@ -249,9 +249,17 @@
 		width: inherit;
 		height: inherit;
 		
-		background-position: -60px -60px;
-		
 		position: relative;
+	}
+	
+	#battleNav-player1 .battleNav-player-handsSprite
+	{
+		background-position: -60px -60px;
+	}
+	
+	#battleNav-player2 .battleNav-player-handsSprite
+	{
+		background-position: -120px -60px;
 	}
 	
 	.battleNav-player-legs
@@ -269,7 +277,7 @@
 		width: inherit;	
 		height: inherit;
 		
-		background-position: -120px -60px;
+		background-position: -180px -60px;
 		
 		position: relative;
 	}

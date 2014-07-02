@@ -152,7 +152,7 @@
 	.tween-battleNav-player-eyes
 	{
 		-webkit-transition: -webkit-transform 0.4s ease;
-		transition: -webkit-transform 0.4s ease;
+		transition: transform 0.4s ease;
 	}
 	
 	.battleNav-player-eyes-lookF
@@ -397,13 +397,8 @@
 	
 	.tween-battleNav-superPunchSprite
 	{
-/*
-		-webkit-transition: -webkit-transform 0.2s ease-out;
-		transition: -webkit-transform 0.2s ease-out;
-*/
-
 		-webkit-transition: -webkit-transform 0.2s ease-in-out;
-		transition: -webkit-transform 0.2s ease-in-out;
+		transition: transform 0.2s ease-in-out;
 	}
 	
 	.battleNav-superPunchAttacker
@@ -422,6 +417,9 @@
 	.battleNav-superPunchReturn
 	{
 		opacity: 0.4;
+		
+		-webkit-transition-delay: 0.1s;
+		transition-delay: 0.1s;
 		
 		-webkit-transform: translateX(0px);
 		transform: translateX(0px);
@@ -459,8 +457,8 @@
 	
 	@keyframes tweenSuperPunchSpriteAmbientFrames
 	{
-		from 	{-webkit-transform: translateY(0);}
-		to		{-webkit-transform: translateY(3px);}
+		from 	{transform: translateY(0);}
+		to		{transform: translateY(3px);}
 	}
 	
 

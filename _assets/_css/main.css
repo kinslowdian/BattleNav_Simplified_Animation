@@ -362,7 +362,9 @@
 		
 		background-position: 0 0;
 		
-		opacity: 0;
+		
+		-webkit-transform-origin: 0% 50%;
+		transform-origin: 0% 50%;
 		
 		position: absolute;
 		
@@ -371,6 +373,30 @@
 		
 		z-index: 1;
 	}
+	
+	.battleNav-player-speech-hide
+	{
+		opacity: 0;
+		
+		-webkit-transform: scale(0.5);
+		transform: scale(0.5);		
+	}
+	
+	.battleNav-player-speech-show
+	{
+		opacity: 1;
+		
+		-webkit-transform: scale(1);
+		transform: scale(1);		
+	}
+	
+	.tween-battleNav-player-speech
+	{
+		-webkit-transition: all 0.1s linear;
+		transition: all 0.1s linear;
+	}
+	
+	
 	
 	.battleNav-player-speechContainer
 	{

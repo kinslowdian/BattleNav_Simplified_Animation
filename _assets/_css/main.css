@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url(bird.css);
+
 	*
 	{
 		padding: 0;
@@ -48,6 +50,8 @@
 		margin: auto;
 		
 		z-index: 0;
+		
+		outline: 1px dashed white;
 	}
 	
 	.tweenFlickerFix div
@@ -109,6 +113,32 @@
 		position: absolute;
 		
 		z-index: 0;
+	}
+	
+	.battleNav-player-inner
+	{
+		width: inherit;
+		height: inherit;
+		
+		position: relative;
+	}
+	
+	.battleNav-player-ThreatPos
+	{
+		-webkit-transform: translateX(90px);
+		transform: translateX(90px);		
+	}
+	
+	.battleNav-player-StartPos
+	{
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+	
+	.tween-battleNav-player-StartPos
+	{
+		-webkit-transition: -webkit-transform 0.2s ease;
+		transition: -webkit-transform 0.2s ease;
 	}
 	
 	.battleNav-player-head-main
@@ -516,8 +546,13 @@
 	{
 		opacity: 1;
 		
+/*
 		-webkit-transform: translateX(150px);
 		transform: translateX(150px);
+*/
+		
+		-webkit-transform: translateX(130px);
+		transform: translateX(130px);
 	}
 	
 	.battleNav-superPunchReturn

@@ -17,6 +17,9 @@
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].addEventListener("animationend", hack_startBattleCountDownSequence, false);		
 	}
 	
+	
+	// battleCute-eyes- >>>> battleCuteBird-eyes-
+	
 	function hack_startBattleCountDownSequence(event)
 	{
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-left .battleCute-bird-board")[0].removeEventListener("webkitAnimationEnd", hack_startBattleCountDownSequence, false);
@@ -24,7 +27,7 @@
 	 	
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-inner").addClass("tween-battleCute-bird-arm-main-fire");
 	 			
-	 	$("#battle-nav-playerBird .battleCute-eyes-sprite").removeClass("battleCute-eyes-norm").addClass("battleCute-eyes-happy");
+	 	$("#battle-nav-playerBird .battleCuteBird-eyes-sprite").removeClass("battleCuteBird-eyes-norm").addClass("battleCuteBird-eyes-happy");
 	 	
 	 	$("#battle-nav-playerBird .battleCute-bird-arm-main").addClass("tween-battleCute-bird-arm-main-intoFly");
 	 			
@@ -81,8 +84,8 @@
 	 	
 /* AMEND */
 /*
-		$("#battle-nav-player1 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-C").addClass("battleCute-eyes-look-R");
-		$("#battle-nav-player2 .battleCute-warrior-head .battleCute-eyes-sprite").removeClass("battleCute-eyes-look-C").addClass("battleCute-eyes-look-L");	
+		$("#battle-nav-player1 .battleCute-warrior-head .battleCuteBird-eyes-sprite").removeClass("battleCuteBird-eyes-look-C").addClass("battleCuteBird-eyes-look-R");
+		$("#battle-nav-player2 .battleCute-warrior-head .battleCuteBird-eyes-sprite").removeClass("battleCuteBird-eyes-look-C").addClass("battleCuteBird-eyes-look-L");	
 */ 
 /* AMEND */	
 	 	
